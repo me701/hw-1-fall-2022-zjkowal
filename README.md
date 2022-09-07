@@ -1,4 +1,4 @@
-# ME 701 -- Homework 1 -- Your Name Here
+# ME 701 -- Homework 1 -- Zach Kowal
 
 ## Instructions
 
@@ -27,12 +27,7 @@ or Octave).
 
 ### Solution
 
-Write your solution here.  Note, in the past, we've used a full, graphical
-version of Linux.  With WSL, you probably don't have as direct a path for
-exploring software in the Software Manager.  However, use the power of
-Google (or AskJeeves) to explore what sorts of open-source software is out
-there for technical or other applications.
-
+Often when using the windows media player, videos will load slowly. To circumvent this, I use an open source software package called VLC Media player. VLC media player can play all sorts of videos, screenshot individual frames, convert file types, along with other functionality. I enjoy it because it loads faster and I have more tools to use in general.
 
 ## Problem 3 -- Your CPU
 
@@ -49,9 +44,9 @@ using `ls > directory_contents.txt` to dump the contents of a directory to a fil
 To display CPU information, I used the following command:
 
 ```bash
-ls -al # <--- that's not right, but it shows you how to include
-       #      code in Markdown!
+lscpu -p=CORE,MHz # This displays core numbers and associated speed. Core numbers are indexed from 0.
 ```
+From there, a list of details is displayed on screen, among which is processor information and cores. Because the cores are indedxed form 0, the total number of cores is the highest number plus 1, and the clock speed for each core is listed (which should all match the processor speed).
 
 ## Problem 4 -- Resource Hogs
 
@@ -63,6 +58,12 @@ in your writeup.
 
 ### Solution
 
+To display a list of processes with resource usage, I used the following command:
+```bash
+ps aux
+```
+
+This displays a list of processes, the user associated with the process, along with the %CPU and %MEM usage for each of them.
 
 
 ## Problem 5 -- `bash`
@@ -74,3 +75,16 @@ Where is `bash` located on your Linux system?  And what version of
 determine this information.
 
 ### Solution
+
+To find where bash is located on a linux system, the following command can be used:
+```
+which bash
+```
+
+This outputs the path /user/bin/bash .
+
+To find the version of bash, this command can be used:
+```
+bash --version
+```
+This outputs the GNU bash version and license information, of which my bash is version 5.1.16(1)-release (x86_64-pc-linux-gnu)
